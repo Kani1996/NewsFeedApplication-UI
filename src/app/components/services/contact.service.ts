@@ -36,4 +36,17 @@ loginValidation(name: any, password: any ) {
     map(res => res.json())
 );
 }
+
+awsCognitoValidation(loginData) {
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/api/auth/login', loginData,{headers :headers }).pipe(map(res => res.json()));
+}
+
+awsCognitoSignUp(userData) {
+  const headers = new Headers();
+  headers.append('Content-Type', 'application/json');
+  return this.http.post('http://localhost:3000/api/auth/register', userData,{headers :headers }).pipe(map(res => res.json()));
+}
+
 }
