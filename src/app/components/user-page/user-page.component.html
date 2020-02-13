@@ -1,0 +1,19 @@
+<div id="main-page"> 
+  <div class="page-header"  fxLayout="row" fxFlex="100">
+    <div fxLayoutAlign="start center" fxFlex="30">
+        <mat-icon class="toolbar-label">person_add</mat-icon><button  [routerLink]="['/news']" mat-button class="toolbar-label">News</button>
+      </div>
+    <div fxFlex="70" fxLayoutAlign="end center">
+       <button class="toolbar-label" mat-icon-button [matMenuTriggerFor]="menuIcon" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+         </button>
+         <mat-menu #menuIcon="matMenu">
+           <button (click)="Logout()" mat-menu-item>
+             <mat-icon>power_settings_new</mat-icon>
+             <span>Logout</span>
+           </button>
+         </mat-menu>
+    </div>
+  </div>
+</div>
+

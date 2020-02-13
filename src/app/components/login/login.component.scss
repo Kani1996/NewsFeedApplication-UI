@@ -1,0 +1,23 @@
+.login-card{
+        margin : 100px;
+        padding : 30px;
+        width: 360px;
+        height: 221px;
+        .full-box{
+            width:100%;
+            font-size: 12px;
+        }
+
+    .Button-style{
+        margin-top : 20px;
+    }
+
+    .page-footer{
+        position: sticky;
+        bottom: 0px;
+        height : 30px;
+        padding : 1px ;
+        box-shadow: 1px 3px 4px #131010;
+        z-index: 10000 !important;
+    }
+}
