@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ContactService } from '../services/contact.service';
 
 @Component({
   selector: 'app-news-api',
@@ -6,10 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./news-api.component.scss']
 })
 export class NewsApiComponent implements OnInit {
-
-  constructor() { }
+  public newsData = {};
+  constructor(private contactService: ContactService) { }
 
   ngOnInit() {
+    this.getDetails();
+  }
+
+  public getDetails() {
+    this.contactService.getNewsData().subscribe((data: any) => {
+      try {
+        if (data !== undefined) {
+          console.log('getDetails:::', data);
+          this.newsData = data.articles;
+        }
+      } catch (ex) {
+        console.log(ex);
+      }
+    }, () => { });
   }
 
 }

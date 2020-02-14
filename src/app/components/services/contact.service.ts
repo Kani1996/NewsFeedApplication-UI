@@ -49,4 +49,10 @@ awsCognitoSignUp(userData) {
   return this.http.post('http://localhost:3000/api/auth/register', userData,{headers :headers }).pipe(map(res => res.json()));
 }
 
+getNewsData() {
+  return this.http.get('http://localhost:3000/api/news/headLines').pipe(
+    map(res => res.json())
+);
+}
+
 }

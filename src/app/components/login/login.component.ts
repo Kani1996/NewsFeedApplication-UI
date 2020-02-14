@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
   }
 
   public login() {
-    this.router.navigate(['/user']);
+      this.router.navigate(['/user']);
       // this.contactService.loginValidation(this.loginForm.value.firstName, this.loginForm.value.password).subscribe((data: any) => {
       //   try {
       //     if (data !== undefined) {

@@ -1,3 +1,27 @@
-<p>
-  news-api works!
-</p>
+<div id="profile-page">
+  <div class="page-header" >
+    <div fxLayout="row" fxFlex="100">
+        <div fxLayoutAlign="start center" class="toolbar-label" fxFlex="30">
+            News
+          </div>
+          <div fxLayoutAlign="end center" class="toolbar-label cursor-pointer" fxFlex="70">
+            <span [routerLink]="['/user']" >back</span>
+         </div>
+    </div>
+  </div>
+  <div class="card-style" *ngFor="let data of newsData">
+    <mat-card >
+      <mat-card-header>
+        <mat-card-title>{{data.title}}</mat-card-title>
+        <mat-card-subtitle>{{data.author}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src={{data.urlToImage}} alt="image">
+      <mat-card-content>
+        <p>
+             {{data.content}}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+ 
+  </div>
